@@ -80,4 +80,58 @@ Muestra la lista de actores participantes, generalmente en una sección deslizab
 
 El código fuente completo de esta práctica se encuentra disponible en:
 
+
+
+
+
+
+## 🔍 Práctica 08: Implementación de Búsquedas (Search Delegate)
+
+
+---
+
+## 📝 Descripción General de la Práctica 08
+
+El objetivo de esta práctica es añadir la funcionalidad de **búsqueda de películas** a **Cinemapedia**. Para lograrlo, se implementará el **Search Delegate** de Flutter, que proporciona una interfaz de búsqueda moderna. Se consumirá el *endpoint* de búsqueda de la *API* de TheMovieDB, incorporando buenas prácticas como el uso de un **Debouncer** para optimizar las peticiones y **Streams** para manejar el flujo de entrada de texto del usuario.
+
+---
+
+## ⚙️ Actividades a Realizar (Práctica 08)
+
+### 1. Clonación y Estructura
+
+* Clonar el Proyecto anterior o crear el ramal pertinente (`Practica-08`).
+
+### 2. Implementación del Search Delegate
+
+* Implementar la clase que extiende de **`SearchDelegate`** como motor de búsquedas y definir los mecanismos de visualización de resultados (e.g., `buildSuggestions`, `buildResults`).
+
+### 3. Modificación de Datasources, Repositorios y Providers
+
+* Modificar los **Datasources** para permitir el consumo del *endpoint* de búsquedas (`/search/movie`).
+* Modificar los **Repositorios** y crear los **Providers** necesarios para vincular los resultados de la búsqueda con la interfaz de usuario.
+
+### 4. Implementación del Debouncer y Streams
+
+* Implementar un **`Debouncer`** para esperar un tiempo posterior al tipado de la consulta antes de enviar la petición al *API*, optimizando los recursos.
+* Implementar **Streams** (o `StreamControllers`) para controlar el flujo de escritura en la caja de búsqueda y notificar al **Provider** de búsqueda.
+
+### 5. Estilización y Widgets
+
+* Implementar la estilización de los resultados a través de los **Builders** para mostrar *widgets* (e.g., tarjetas de película con póster y título).
+* Aplicar buenas prácticas para la **reutilización de *widgets* (DRY)**, especialmente para la presentación de los resultados de búsqueda.
+
+### Capturas 
+Muestra la lista de actores participantes, generalmente en una sección deslizable dentro de la vista de detalle.
+
+![captura](/img%203.png)
+![captura](//img%204.png)
+
+
+---
+
+## 🔗 Enlace al Repositorio
+
+El código fuente completo de la Práctica 07 y la base para la Práctica 08 se encuentra disponible en:
+
 [https://github.com/Dulce990/DMI_Practica07_220262](https://github.com/Dulce990/DMI_Practica07_220262)
