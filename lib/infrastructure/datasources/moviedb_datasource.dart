@@ -71,6 +71,20 @@ class MoviedbDatasource extends MoviesDatasource {
   }
 
   @override
+  Future<List<Movie>> getMexicanMovies({int page = 1}) async {
+    final response = await dio.get(
+      '/discover/movie',
+      queryParameters: {
+        'page': page,
+        'with_origin_country': 'MX',
+        'sort_by': 'popularity.desc',
+      },
+    );
+
+    return _jsonToMovies(response.data);
+  }
+
+  @override
   Future<Movie> getMovieById(String id) async {
     final response = await dio.get('/movie/$id');
     if (response.statusCode != 200)

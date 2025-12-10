@@ -4,7 +4,6 @@ import 'package:cinemapedia_matricula/presentation/widgets/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
-
 class HomeScreen extends StatelessWidget {
 
   static const name = 'home-screen';
@@ -37,6 +36,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     ref.read( popularMoviesProvider.notifier ).loadNextPage();
     ref.read( topRatedMoviesProvider.notifier ).loadNextPage();
     ref.read( upcomingMoviesProvider.notifier ).loadNextPage();
+    ref.read( mexicanMoviesProvider.notifier ).loadNextPage();
   }
 
 
@@ -52,6 +52,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     final topRatedMovies = ref.watch( topRatedMoviesProvider );
     final upcomingMovies = ref.watch( upcomingMoviesProvider );
 
+    final mexicanMovies = ref.watch( mexicanMoviesProvider );
     return CustomScrollView(
       slivers: [
 
@@ -101,6 +102,12 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                       loadNextPage: () =>ref.read(topRatedMoviesProvider.notifier).loadNextPage()
                     ),
 
+                    MovieHorizontalListview(
+                      movies: mexicanMovies,
+                      title: 'Películas Mexicanas',
+                      subTitle: 'Desde México',
+                      loadNextPage: () =>ref.read(mexicanMoviesProvider.notifier).loadNextPage()
+                    ),
                     const SizedBox( height: 10 ),
               
               

@@ -53,3 +53,9 @@ final topRatedMoviesProvider =
   final repo = ProviderContainer().read(movieRepositoryProvider);
   return MoviesNotifier(fetchMoreMovies: repo.getTopRated);
 });
+
+final mexicanMoviesProvider =
+    NotifierProvider<MoviesNotifier, List<Movie>>(() {
+  final repo = ProviderContainer().read(movieRepositoryProvider);
+  return MoviesNotifier(fetchMoreMovies: repo.getMexicanMovies);
+});
